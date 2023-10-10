@@ -20,7 +20,7 @@ class EnterPasswordView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: appBarColor,
-        title: const Text("Enter Password"),
+        title: const Text("Registrar Face"),
         elevation: 0,
       ),
       body: Container(
@@ -43,11 +43,11 @@ class EnterPasswordView extends StatelessWidget {
                 CustomTextField(
                   formFieldKey: _formFieldKey,
                   controller: _controller,
-                  hintText: "Password",
-                  validatorText: "Enter password to proceed",
+                  hintText: "Senha",
+                  validatorText: "Digite a senha para continuar",
                 ),
                 CustomButton(
-                  text: "Continue",
+                  text: "Continuar",
                   onTap: () async {
                     if (_formFieldKey.currentState!.validate()) {
                       FocusScope.of(context).unfocus();
@@ -64,7 +64,7 @@ class EnterPasswordView extends StatelessWidget {
                             ),
                           );
                         } else {
-                          CustomSnackBar.errorSnackBar("Wrong Password :( ");
+                          CustomSnackBar.errorSnackBar("Senha errada :( ");
                         }
                       });
                     }

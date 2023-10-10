@@ -34,7 +34,7 @@ class CustomTextField extends StatelessWidget {
           ),
           validator: (val) {
             if (val == null || val.trim().isEmpty) {
-              return "Name cannot be empty";
+              return "Este campo não pode ser vazio";
             } else {
               return null;
             }

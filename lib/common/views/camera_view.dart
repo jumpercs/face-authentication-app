@@ -39,7 +39,7 @@ class _CameraViewState extends State<CameraView> {
           children: [
             Icon(
               Icons.camera_alt_outlined,
-              color: primaryWhite,
+              color: Colors.transparent,
               size: 0.038.sh,
             ),
           ],
@@ -55,7 +55,7 @@ class _CameraViewState extends State<CameraView> {
                 radius: 0.15.sh,
                 backgroundColor: const Color(0xffD9D9D9),
                 child: Icon(
-                  Icons.camera_alt,
+                  Icons.face,
                   size: 0.09.sh,
                   color: const Color(0xff2E2E2E),
                 ),
@@ -80,7 +80,7 @@ class _CameraViewState extends State<CameraView> {
           ),
         ),
         Text(
-          "Click here to Capture",
+          "Aperte aqui para tirar foto",
           style: TextStyle(
             fontSize: 14,
             color: primaryWhite.withOpacity(0.6),

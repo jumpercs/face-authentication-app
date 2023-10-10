@@ -69,7 +69,7 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: appBarColor,
-        title: const Text("Authenticate Face"),
+        title: const Text("Verificar Face"),
         elevation: 0,
       ),
       body: LayoutBuilder(
@@ -135,7 +135,7 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
                           const Spacer(),
                           if (_canAuthenticate)
                             CustomButton(
-                              text: "Authenticate",
+                              text: "Verificar",
                               onTap: () {
                                 setState(() => isMatching = true);
                                 _playScanningAudio;
@@ -235,9 +235,8 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
         _matchFaces();
       } else {
         _showFailureDialog(
-          title: "No Users Registered",
-          description:
-              "Make sure users are registered first before Authenticating.",
+          title: "Rosto não registrado",
+          description: "Certifique-se de registrar o rosto.",
         );
       }
     });
@@ -298,8 +297,8 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
       if (trialNumber == 4) {
         setState(() => trialNumber = 1);
         _showFailureDialog(
-          title: "Redeem Failed",
-          description: "Face doesn't match. Please try again.",
+          title: "Falha na busca",
+          description: "Face não encontrada. Tente novamente.",
         );
       } else if (trialNumber == 3) {
         //After 2 trials if the face doesn't match automatically, the registered name prompt
@@ -315,7 +314,7 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                title: const Text("Enter Name"),
+                title: const Text("Digite o nome"),
                 content: TextFormField(
                   controller: _nameController,
                   cursorColor: accentColor,
@@ -340,7 +339,8 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
                   TextButton(
                     onPressed: () {
                       if (_nameController.text.trim().isEmpty) {
-                        CustomSnackBar.errorSnackBar("Enter a name to proceed");
+                        CustomSnackBar.errorSnackBar(
+                            "Digite um nome para continuar");
                       } else {
                         Navigator.of(context).pop();
                         setState(() => isMatching = true);
@@ -349,7 +349,7 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
                       }
                     },
                     child: const Text(
-                      "Done",
+                      "Finalizado",
                       style: TextStyle(
                         color: accentColor,
                       ),
@@ -361,8 +361,8 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
       } else {
         setState(() => trialNumber++);
         _showFailureDialog(
-          title: "Redeem Failed",
-          description: "Face doesn't match. Please try again.",
+          title: "Falha na busca",
+          description: "Face não encontrada. Tente novamente.",
         );
       }
     }
@@ -377,7 +377,7 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
       log("Getting User Error: $e");
       setState(() => isMatching = false);
       _playFailedAudio;
-      CustomSnackBar.errorSnackBar("Something went wrong. Please try again.");
+      CustomSnackBar.errorSnackBar("Algo deu errado, tente novamente.");
     }).then((snap) {
       if (snap.docs.isNotEmpty) {
         users.clear();
@@ -391,9 +391,9 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
       } else {
         setState(() => trialNumber = 1);
         _showFailureDialog(
-          title: "User Not Found",
+          title: "Usuário não encontrado",
           description:
-              "User is not registered yet. Register first to authenticate.",
+              "Face ainda não registrada. Primeiro registre a face para continuar.",
         );
       }
     });

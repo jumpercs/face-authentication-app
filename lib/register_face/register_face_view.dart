@@ -40,7 +40,7 @@ class _RegisterFaceViewState extends State<RegisterFaceView> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: appBarColor,
-        title: const Text("Register User"),
+        title: const Text("Registrar Face"),
         elevation: 0,
       ),
       body: Container(
@@ -96,7 +96,7 @@ class _RegisterFaceViewState extends State<RegisterFaceView> {
                   const Spacer(),
                   if (_image != null)
                     CustomButton(
-                      text: "Start Registering",
+                      text: "Iniciar Registro",
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(

@@ -14,7 +14,7 @@ class UserDetailsView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: appBarColor,
-        title: const Text("Authenticated!!!"),
+        title: const Text("Autenticado!!!"),
         elevation: 0,
       ),
       body: Container(
@@ -48,7 +48,7 @@ class UserDetailsView extends StatelessWidget {
               ),
               SizedBox(height: 0.025.sh),
               Text(
-                "Hey ${user.name} !",
+                "Olá ${user.name} !",
                 style: const TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 26,
@@ -57,7 +57,7 @@ class UserDetailsView extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                "You are Successfully Authenticated !",
+                "Autenticado com sucesso!",
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 18,

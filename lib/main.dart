@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Face Authentication App',
+      title: 'Reconhecimento facial',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(accentColor: accentColor),
         inputDecorationTheme: InputDecorationTheme(
@@ -72,7 +72,7 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Face Authentication",
+              "Reconhecimento facial",
               style: TextStyle(
                 color: textColor,
                 fontSize: 0.033.sh,
@@ -81,7 +81,7 @@ class Home extends StatelessWidget {
             ),
             SizedBox(height: 0.07.sh),
             CustomButton(
-              text: "Register User",
+              text: "Adicionar Face",
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -92,7 +92,7 @@ class Home extends StatelessWidget {
             ),
             SizedBox(height: 0.025.sh),
             CustomButton(
-              text: "Authenticate User",
+              text: "Verificar Face",
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
